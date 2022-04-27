@@ -11,7 +11,7 @@ Classes Needed{
 
 class Global()? (x) " don't think a global class would be viable" (lmk what you think - Nate)
 
-"Youre right we need a class for each character and enemy"(Jaime)
+"Youre right we need a class for  characters and enemies"(Jaime)
 
 class CharacterSelect   ?
 
