@@ -3,13 +3,17 @@
 #include <windows.h>
 
 using namespace std;
-const int width = 30;
-const int height = 20;
+const int width = 80;
+const int height = 40;
 bool newMap;
+bool menuOpened;
+bool run = false;
 int x, y;
+int xboundries[6];
+int yboundries[6];
 char CharInput;
 char userCharacter = 'M';
-enum eInputs { STOP = 0, LEFT, RIGHT, UP, DOWN, MENU };
+enum eInputs { STOP = 0, LEFT, RUN_LEFT, RIGHT, RUN_RIGHT, UP, RUN_UP, DOWN, RUN_DOWN, MENU };
 eInputs userInput;
 // functions
 void DesertSetup();
@@ -40,7 +44,7 @@ int main()
 void DesertSetup()
 {
     newMap = false;
-    moveDir = STOP;
+    userInput = STOP;
     x = width / 2;
     y = height - 1;
 }
@@ -68,8 +72,8 @@ void DesertMap()
             else if (i == y && j == x)
             {
                 cout << userCharacter;
-
             }
+
             else
             {
                 cout << " ";
@@ -90,6 +94,7 @@ void DesertMap()
             cout << "#";
         }
     }
+    Sleep(250);
 }
 
 void UserInput()
@@ -99,62 +104,90 @@ void UserInput()
         switch (_getch())
         {
         case 'a':
-            moveDir = LEFT;
+            userInput = LEFT;
+            break;
+        case 'A':
+            userInput = RUN_LEFT;
             break;
 
         case 'd':
-            moveDir = RIGHT;
+            userInput = RIGHT;
+            break;
+
+        case 'D':
+            userInput = RUN_RIGHT;
             break;
 
         case 'w':
-            moveDir = UP;
+            userInput = UP;
+            break;
+
+        case 'W':
+            userInput = RUN_UP;
             break;
 
         case 's':
-            moveDir = DOWN;
+            userInput = DOWN;
+            break;
+
+        case 'S':
+            userInput = RUN_DOWN;
             break;
         case ' ':
+            userInput = STOP;
             menuOpened = true;
             break;
         }
     }
     else
     {
-        moveDir = STOP;
+        userInput = STOP;
     }
 
 }
 
 void InputLogic()
 {
-    switch (moveDir)
+    switch (userInput)
     {
 
     case LEFT:
-        if (x == 1 && y != 4)
-        {
-            x = 0;
-        }
-        else 
-        {
             x--;
-            break;
-        }
+        break;
+
+    case RUN_LEFT:
+       x -= 4;
+       break;
 
     case RIGHT:
         x++;
         break;
 
+    case RUN_RIGHT:
+        x += 4;
+        break;
+
+
     case UP:
         y--;
         break;
 
+    case RUN_UP:
+            y -= 2;
+            break;
+
     case DOWN:
         y++;
         break;
+
+    case RUN_DOWN:
+            y += 2;
+            break;
+
     case STOP:
         x = x;
         y = y;
+        run = false;
         break;
     default:
         break;
