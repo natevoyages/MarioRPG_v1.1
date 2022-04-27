@@ -9,8 +9,12 @@ headers needed{
 
 Classes Needed{
 
-class Global()?
+class Global()? (x) " don't think a global class would be viable" (lmk what you think - Nate)
+class CharacterSelect   ?
 
+class StartMenu   ?
+
+class MapConfig  ?
 }
 
 
