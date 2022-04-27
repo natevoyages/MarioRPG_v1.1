@@ -8,7 +8,7 @@ headers needed{
 }
 
 Classes Needed{
-
+class Global()?
 
 }
 
