@@ -13,11 +13,11 @@ class Global()? (x) " don't think a global class would be viable" (lmk what you 
 
 "Youre right we need a class for  characters and enemies"(Jaime)
 
-class CharacterSelect   ?
+class CharacterSelect   ? (O) "Can we store the characters stats in here too or just the select option?" (Jaime)
 
-class StartMenu   ?
+class StartMenu   ? (?) "What would we do with this class?" (Jaime)
 
-class MapConfig  ?
+class MapConfig  ? (O) 
 
 }
 
