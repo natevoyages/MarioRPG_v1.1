@@ -16,10 +16,11 @@ InputConfig::InputConfig()
     runUpChar = 'W';
     runDownChar = 'S';
 
+    enterChar = '\n';
+
     menuOpened = false;
 
 }
-
 
 
 void InputConfig::UserInput()
@@ -72,7 +73,7 @@ void InputConfig::UserInput()
             userInput = STOP;
             menuOpened = true;
         }
-        else if (_getch() == '\n') 
+        else if (_getch() == enterChar) 
         {
             userInput = ENTER;
         }
@@ -82,6 +83,8 @@ void InputConfig::UserInput()
         userInput = STOP;
     }
 }
+
+
  void InputConfig::GamePlayInputLogic(int& x, int& y) const
  {
      switch (userInput)
@@ -149,7 +152,8 @@ void InputConfig::UserInput()
              y++;
              break;
          }
-     //case 9:
+     case 9:
+     if(startMenu.Get = true)
 
      case 0:
          y = y;

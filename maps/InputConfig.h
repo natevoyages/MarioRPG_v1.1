@@ -1,12 +1,15 @@
 #ifndef INPUTCONFIG_H
 #define INPUTCONFIG_H
 
+#include "StartMenu.h"
 class InputConfig
 {
 public:
     InputConfig();
 
     void UserInput();
+
+    int GetUserInput();
 
     void GamePlayInputLogic(int& x, int& y) const;
 
@@ -22,6 +25,7 @@ private:
     char runRightChar;
     char runUpChar;
     char runDownChar;
+    char enterChar;
     bool menuOpened;
 
     int userInput;
@@ -39,6 +43,7 @@ private:
 
     const int ENTER = 9;
     
+    StartMenu startMenu;
 
 };
 

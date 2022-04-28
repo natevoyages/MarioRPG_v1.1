@@ -24,6 +24,7 @@
     <ProjectGuid>{ab18d56b-5c9b-4daf-946b-ffcd107a2366}</ProjectGuid>
     <RootNamespace>maps</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MarioRPG</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -141,10 +142,13 @@
   <ItemGroup>
     <ClCompile Include="maps.cpp" />
     <ClCompile Include="InputConfig.cpp" />
+    <ClCompile Include="InGameMenu.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="StartMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
-    <ClInclude Include="Header1.h" />
+    <ClInclude Include="InGameMenu.h" />
+    <ClInclude Include="StartMenu.h" />
     <ClInclude Include="InputConfig.h" />
     <ClInclude Include="MapsConfig.h" />
   </ItemGroup>

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
-
 using namespace std;
+/**using namespace std;
 const int width = 80;
 const int height = 40;
 bool newMap;
@@ -105,4 +105,4 @@ void DesertMap()
 }
 
 
-
+*/
