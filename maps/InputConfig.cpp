@@ -63,10 +63,10 @@ void InputConfig::TitleScreenInput(bool& titleScreen)
 
         }
     }
-    else
+   /* else
     {
         userInput = STOP;
-    }
+    }*/
     
  
 }

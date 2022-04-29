@@ -16,7 +16,7 @@ public:
 
 	void TitlePrint();
 
-	void PrintStartMenu(vector<string>& menuOptions); //fix me
+	//void PrintStartMenu(vector<string>& menuOptions); //fix me
 
 	void TitleScreen();
 

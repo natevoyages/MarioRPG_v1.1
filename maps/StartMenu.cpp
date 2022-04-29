@@ -25,7 +25,7 @@ void StartMenu::TitlePrint() {
 
     cout << "\n         Press 'Space' to Start";
 }
-
+/*
 void StartMenu::PrintStartMenu(vector<string>& menuOptions) //fix me
 {
     cout << "    _/      _/                      _/                _/_/_/    _/_/_/      _/_/_/ \n";
@@ -47,15 +47,16 @@ void StartMenu::PrintStartMenu(vector<string>& menuOptions) //fix me
 
     }
 }
+*/
 
 void StartMenu::TitleMenu()
 {
     while (titleMenu)
     {
-        system("cls");
+        //system("cls");
         // add save option 
-        PrintStartMenu(vector<string> menuOptions);
-        input.StartMenuInputLogic(yMenu, numOptions, select,titleMenu);
+        //PrintStartMenu(vector<string> menuOptions);
+        //input.StartMenuInputLogic(yMenu, numOptions, select,titleMenu);
 
     }
 }
