@@ -4,84 +4,71 @@
 
 using namespace std;
 
-InputConfig::InputConfig() 
+void InputConfig::UserInput()
 {
-    leftChar = 'a';
-    rightChar = 'd';
-    upChar = 'w';
-    downChar = 's';
+    if (_kbhit())
+    {
+        switch (_getch())
+        {
+        case 'a':
+            userInput = LEFT;
+            break;
 
-    runLeftChar = 'A';
-    runRightChar = 'D';
-    runUpChar = 'W';
-    runDownChar = 'S';
+        case 'A':
+            userInput = RUN_LEFT;
+            break;
 
-    enterChar = '\n';
+        case 'd':
+            userInput = RIGHT;
+            break;
 
-    menuOpened = false;
+        case 'D':
+            userInput = RUN_RIGHT;
+            break;
 
+        case 'w':
+            userInput = UP;
+            break;
+
+        case 'W':
+            userInput = RUN_UP;
+            break;
+        case 's':
+            userInput = DOWN;
+            break;
+
+        case 'S':
+            userInput = RUN_DOWN;
+            break;
+
+        case ' ':
+            userInput = STOP;
+            //menuOpened = true;
+            break;
+
+        }
+    }
 }
 
-
-void InputConfig::UserInput()
+void InputConfig::TitleScreenInput(bool& titleScreen)
 {
     
     if (_kbhit())
     {
-        if (_getch() == leftChar)
+        switch (_getch())
         {
-            userInput = LEFT;
-        }
+        case ' ':
+            titleScreen = false;
+            break;
 
-        else if (_getch() == runLeftChar)
-        {
-            userInput = RUN_LEFT;
-        }
-
-        else if (_getch() == rightChar)
-        {
-            userInput = RIGHT;
-        }
-
-        else if (_getch() == runRightChar)
-        {
-            userInput = RUN_RIGHT;
-        }
-
-        else if (_getch() == upChar)
-        {
-            userInput = UP;
-        }
-
-        else if (_getch() == runUpChar)
-        {
-            userInput = RUN_UP;
-        }
-
-        else if (_getch() == downChar)
-        {
-            userInput = DOWN;
-        }
-
-        else if (_getch() == runDownChar)
-        {
-            userInput = RUN_DOWN;
-        }
-
-        else if (_getch() == ' ')
-        {
-            userInput = STOP;
-            menuOpened = true;
-        }
-        else if (_getch() == enterChar) 
-        {
-            userInput = ENTER;
         }
     }
     else
     {
         userInput = STOP;
     }
+    
+ 
 }
 
 
@@ -89,42 +76,41 @@ void InputConfig::UserInput()
  {
      switch (userInput)
      {
-
-     case 1:
+     case LEFT:
          x--;
          break;
 
-     case 5:
+     case RUN_LEFT:
          x -= 4;
          break;
 
-     case 2:
+     case RIGHT:
          x++;
          break;
 
-     case 6:
+     case RUN_RIGHT:
          x += 4;
          break;
 
 
-     case 3:
+     case UP:
          y--;
          break;
 
-     case 7:
+     case RUN_UP:
          y -= 2;
          break;
 
-     case 4:
+     case DOWN:
          y++;
          break;
 
-     case 8:
+     case RUN_DOWN:
          y += 2;
          break;
 
-         //case 9:
-     case 0:
+     
+     case STOP:
          x = x;
          y = y;
          break;
@@ -134,31 +120,31 @@ void InputConfig::UserInput()
      }
  }
 
- void InputConfig::StartMenuInputLogic( int numMenuOptions) const
+ void InputConfig::StartMenuInputLogic(int& yMenu, int numMenuOptions, bool& select, bool& titleMenu)
  {
-     int y = 0;
      switch (userInput)
      {
-     case 3:
-         if (y != 0)
+     case UP:
+         if (yMenu != 0 && yMenu != numMenuOptions)
          {
-             y--;
+             yMenu--;
              break;
          }
 
      case 4:
-         if (y != numMenuOptions - 1)
+         if (yMenu != numMenuOptions)
          {
-             y++;
+             yMenu++;
              break;
          }
-     case 9:
-     if(startMenu.Get = true)
+     case ENTER:
+         select = true;
+         break;
 
-     case 0:
-         y = y;
+     case STOP:
+         yMenu = yMenu;
          break;
      default:
-         break;
+         break; 
      }
  }

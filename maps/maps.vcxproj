@@ -144,6 +144,7 @@
     <ClCompile Include="InputConfig.cpp" />
     <ClCompile Include="InGameMenu.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source.cpp" />
     <ClCompile Include="StartMenu.cpp" />
   </ItemGroup>
   <ItemGroup>

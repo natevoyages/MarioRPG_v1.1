@@ -1,8 +1,13 @@
 #ifndef STARTMENU_H
 #define STARTMENU_H
+
+#include "InputConfig.h"
 #include <iostream>
 #include <conio.h>
 #include <windows.h>
+#include <vector>
+
+
 class StartMenu
 {
 public:
@@ -11,12 +16,17 @@ public:
 
 	void TitlePrint();
 
-	bool GetTitleScreenStatus();
+	void PrintStartMenu(vector<string>& menuOptions); //fix me
 
-	void SetTitleScreenStatus();
+	void TitleScreen();
 
+	void TitleMenu();
 private:
-
-	bool titleScreen = true;
+	int yMenu;
+	int numOptions;
+	bool titleScreen;
+	bool titleMenu;
+	bool select;
+	InputConfig input;
 };
 #endif
